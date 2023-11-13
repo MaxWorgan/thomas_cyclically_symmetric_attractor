@@ -13,7 +13,7 @@ Thomas cyclically symmetric attractor
 
 Clone the project:
 
-    git clone https://github.com/max.worgan/thomas_cyclically_symmetric_attractor
+    git clone https://github.com/MaxWorgan/thomas_cyclically_symmetric_attractor
     cd thomas_cyclically_symmetric_attractor
     mkdir build
     cd build
