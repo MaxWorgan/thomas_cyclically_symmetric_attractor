@@ -1,0 +1,56 @@
+class:: ThomasCSA
+summary:: Thomas cyclically symmetric attractor
+related:: TODO
+categories:: UGens>TODO
+
+description::
+
+An implmentation of Thomas cyclically symmetric attractor.
+
+teletype::
+	x' = sin(y) - (b * x)
+	y' = sin(z) - (b * y)
+	z' = sin(x) - (b * z)
+::
+
+See https://en.wikipedia.org/wiki/Thomas%27_cyclically_symmetric_attractor for more
+details. Uses RK4 for integration.
+
+
+classmethods::
+
+method::ar, kr
+
+argument::stepSize
+
+The step size of the ingetrator - also controls the output frequency.
+
+argument::b
+
+A bifurcation parameter. Range between 0 and 1;
+
+
+examples::
+
+code::
+
+//As a raw oscillator
+{ ThomasCSA.ar(MouseX.kr(0.001,1),MouseY.kr(0.01,0.28)) * 0.2}.play
+
+
+//As control for a SinOsc
+{ SinOsc.ar(Lag.ar(ThomasUgen.ar(0.01,MouseX.kr(0.001,0.3)),3e-3)*300)*0.4}.play;
+
+
+// So something wierd in stereo
+SynthDef(\thomas, { | out=0, dt=0.1, b=0.18|
+	var x;
+	x = ThomasCSA.ar(MouseX.kr(0.0001,1.0),MouseY.kr(0.01,0.2));
+	Out.ar(out, [x[0]-x[1], x[1]-x[2]] * 0.1);
+}).add
+	
+Synth.new(\thomas)
+
+
+
+::

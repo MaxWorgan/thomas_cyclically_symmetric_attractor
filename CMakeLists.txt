@@ -62,28 +62,28 @@ if (NOVA_SIMD)
 endif()
 
 ####################################################################################################
-# Begin target ThomasUgen
+# Begin target ThomasCSA
 
-set(ThomasUgen_cpp_files
-    plugins/ThomasUgen/ThomasUgen.hpp
-    plugins/ThomasUgen/ThomasUgen.cpp
+set(ThomasCSA_cpp_files
+    plugins/ThomasCSA/ThomasCSA.hpp
+    plugins/ThomasCSA/ThomasCSA.cpp
 )
-set(ThomasUgen_sc_files
-    plugins/ThomasUgen/ThomasUgen.sc
+set(ThomasCSA_sc_files
+    plugins/ThomasCSA/ThomasCSA.sc
 )
-set(ThomasUgen_schelp_files
-    plugins/ThomasUgen/ThomasUgen.schelp
+set(ThomasCSA_schelp_files
+    plugins/ThomasCSA/ThomasCSA.schelp
 )
 
 sc_add_server_plugin(
-    "Thomascyclicallysymmetricattractor/ThomasUgen" # desination directory
-    "ThomasUgen" # target name
-    "${ThomasUgen_cpp_files}"
-    "${ThomasUgen_sc_files}"
-    "${ThomasUgen_schelp_files}"
+    "Thomascyclicallysymmetricattractor/ThomasCSA" # desination directory
+    "ThomasCSA" # target name
+    "${ThomasCSA_cpp_files}"
+    "${ThomasCSA_sc_files}"
+    "${ThomasCSA_schelp_files}"
 )
 
-# End target ThomasUgen
+# End target ThomasCSA
 ####################################################################################################
 
 ####################################################################################################
