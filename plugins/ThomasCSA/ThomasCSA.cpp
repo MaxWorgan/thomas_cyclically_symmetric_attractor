@@ -68,8 +68,8 @@ vec ThomasCSA::stepRK4(vec position, float dt){
     vec myVec;
 
     myVec.x = position.x + (k1x + 2.0*(k2x + k3x) + k4x) * ONESIXTH;
-	myVec.y = position.y + (k1y + 2.0*(k2y + k3y) + k4y) * ONESIXTH;
-	myVec.z = position.z + (k1z + 2.0*(k2z + k3z) + k4z) * ONESIXTH;
+  	myVec.y = position.y + (k1y + 2.0*(k2y + k3y) + k4y) * ONESIXTH;
+	  myVec.z = position.z + (k1z + 2.0*(k2z + k3z) + k4z) * ONESIXTH;
 
 
     return myVec;
